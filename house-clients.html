@@ -11,6 +11,9 @@
     <meta name="author" content="Phoenixcoded" />
     <!-- Favicon icon -->
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <!-- ekko-lightbox css -->
+    <link rel="stylesheet" href="assets/css/plugins/ekko-lightbox.css">
+    <link rel="stylesheet" href="assets/css/plugins/lightbox.min.css">
     <!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -49,10 +52,9 @@
                         <label>Admin</label>
                     </li>
                     <li class="nav-item pcoded-hasmenu">
-                        <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-settings"></i></span><span class="pcoded-mtext">Painel de Controle</span></a>
+                        <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-settings"></i></span><span class="pcoded-mtext">Control Panel</span></a>
                         <ul class="pcoded-submenu">
-                            <li><a href="#">Options Quiz</a></li>
-                            <li><a href="#">Config</a></li>
+                            <li><a href="#">Add Credits</a></li>
                         </ul>
                     </li>
                     <!-- Menus -->
@@ -62,15 +64,11 @@
                     </li>
 
                     <li class="nav-item pcoded-hasmenu">
-                        <li class="nav-item"><a href="clients.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-user"></i></span><span class="pcoded-mtext">Clientes</span></a></li>
+                        <li class="nav-item"><a href="add-credits.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-user"></i></span><span class="pcoded-mtext">Add Credits</span></a></li>
                     </li>
 
                     <li class="nav-item pcoded-hasmenu">
-                        <li class="nav-item"><a href="house-clients.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Casas</span></a></li>
-                    </li>
-
-                    <li class="nav-item pcoded-hasmenu">
-                        <li class="nav-item"><a href="service-providers.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-share-2"></i></span><span class="pcoded-mtext">Prestadores</span></a></li>
+                        <li class="nav-item"><a href="house-clients.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Clients</span></a></li>
                     </li>
 
                 </ul>
@@ -216,70 +214,527 @@
                     <div class="row align-items-center">
                         <div class="col-md-12">
                             <div class="page-header-title">
-                                <h5 class="m-b-10">Dashboard Analytics</h5>
+                                <h5 class="m-b-10">Search Houses</h5>
                             </div>
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="#!">Dashboard Analytics</a></li>
+                                <li class="breadcrumb-item"><a href="#!">Search Houses</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Search -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <button class="btn btn-sm btn-light-primary float-end" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" title="Search"><i class="feather icon-search"></i> Click here to search</button>
 
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="visibility: hidden;" aria-hidden="true">
+                            <div class="offcanvas-header">
+                                <h5 id="offcanvasRightLabel">Search</h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <div class="row " id="">
+                                    <!-- PROPERTY TYPE -->
+                                    <div class="col-sm-12 col-md-12 form-group">
+                                        <p>PROPERTY TYPE:</p>
+                                        <div class="list-group">
+                                            <label class="list-group-item">
+                                                        <input class="form-check-input me-1" type="checkbox" >
+                                                        House
+                                                    </label>
+                                            <label class="list-group-item">
+                                                        <input class="form-check-input me-1" type="checkbox" >
+                                                        Townhouse
+                                                    </label>
+                                            <label class="list-group-item">
+                                                        <input class="form-check-input me-1" type="checkbox" >
+                                                        Apartament
+                                                    </label>
+                                            <label class="list-group-item">
+                                                        <input class="form-check-input me-1" type="checkbox" >
+                                                        Office
+                                                    </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- CHOOSE CLEANING -->
+                                    <div class="col-sm-12 col-md-12 form-group">
+                                        <p>CHOOSE CLEANING YOU WOULD LIKE?</p>
+                                        <div class="list-group">
+                                            <label class="list-group-item">
+                                                        <input class="form-check-input me-1" type="checkbox" >
+                                                        REGULAR CLEANING
+                                                    </label>
+                                            <label class="list-group-item">
+                                                        <input class="form-check-input me-1" type="checkbox" >
+                                                        DEEP CLEANING
+                                                    </label>
+                                            <label class="list-group-item">
+                                                        <input class="form-check-input me-1" type="checkbox" >
+                                                        MOVE IN/OUT CLEANING
+                                                    </label>
+                                            <label class="list-group-item">
+                                                        <input class="form-check-input me-1" type="checkbox" >
+                                                        POST CONSTRUCTION CLEANING
+                                                    </label>
+                                            <label class="list-group-item">
+                                                        <input class="form-check-input me-1" type="checkbox" >
+                                                        AFTER PARTY
+                                                    </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- CLEANING IS -->
+                                    <div class="col-sm-12 col-md-12 form-group">
+                                        <p>CLEANING IS:</p>
+                                        <div class="list-group">
+                                            <label class="list-group-item">
+                                                        <input class="form-check-input me-1" type="radio"  name="radio_cleaning">
+                                                        ONE TIME
+                                                    </label>
+                                            <label class="list-group-item">
+                                                        <input class="form-check-input me-1" type="radio"  name="radio_cleaning">
+                                                        WEEKLY
+                                                    </label>
+                                            <label class="list-group-item">
+                                                        <input class="form-check-input me-1" type="radio"  name="radio_cleaning">
+                                                        BEWEEKLY
+                                                    </label>
+                                            <label class="list-group-item">
+                                                        <input class="form-check-input me-1" type="radio"  name="radio_cleaning">
+                                                        MONTHLY
+                                                    </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- HOW MANY BEDROOMS -->
+                                    <div class="col-sm-12 col-md-12 form-group">
+                                        <div class="form-group">
+                                            <label class="floating-label" for="BEDROOMS">HOW MANY BEDROOMS?</label>
+                                            <input type="number" class="form-control" id="BEDROOMS" placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="floating-label" for="BATHROOMS">HOW MANY BATHROOMS?</label>
+                                            <input type="number" class="form-control" id="BATHROOMS" placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="floating-label" for="ROOM">HOW MANY DINING ROOM?</label>
+                                            <input type="number" class="form-control" id="ROOM" placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="floating-label" for="LIVING">HOW MANY LIVING ROOM?</label>
+                                            <input type="number" class="form-control" id="LIVING" placeholder="">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <button class="btn btn-light-primary btn-sm" data-bs-dismiss="offcanvas">
+                                    Search
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-12 col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="text-primary mb-3">APARTAMENT / 3 BEDROOMS / 5 BATHROOMS ...</h5>
+                            <span class="mb-1 text-muted d-flex align-items-end text-h-primary"> 4289 Calvin Street - Baltimore, near MD Tower Maryland</span>
+                            <span class="mb-1 text-muted d-flex align-items-end text-h-primary">Cleaning Date: 2023-02-02</span>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 form-group">
+                                    <h6 class="text-muted">PROPERTY TYPE:</h6>
+                                    <div class="list-group">
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox"  disabled>
+                                                    House
+                                                </label>
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox" disabled >
+                                                    Townhouse
+                                                </label>
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox" checked  disabled>
+                                                    Apartament
+                                                </label>
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox" disabled >
+                                                    Office
+                                                </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <button type="button" class="btn btn-primary mr-2 mb-2 has-ripple" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">See More ...</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="text-primary mb-3">HOUSE / 3 BEDROOMS / 5 BATHROOMS ...</h5>
+                            <span class="mb-1 text-muted d-flex align-items-end text-h-primary"> 4289 Calvin Street - Baltimore, near MD Tower Maryland</span>
+                            <span class="mb-1 text-muted d-flex align-items-end text-h-primary">Cleaning Date: 2023-02-02</span>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 form-group">
+                                    <h6 class="text-muted">PROPERTY TYPE:</h6>
+                                    <div class="list-group">
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox" checked disabled>
+                                                    House
+                                                </label>
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox" disabled >
+                                                    Townhouse
+                                                </label>
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox"   disabled>
+                                                    Apartament
+                                                </label>
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox" disabled >
+                                                    Office
+                                                </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <button type="button" class="btn btn-primary mr-2 mb-2 has-ripple" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">See More ...</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="text-primary mb-3">OFFICE / 1 BEDROOMS / 1 BATHROOMS ...</h5>
+                            <span class="mb-1 text-muted d-flex align-items-end text-h-primary"> 4289 Calvin Street - Baltimore, near MD Tower Maryland</span>
+                            <span class="mb-1 text-muted d-flex align-items-end text-h-primary">Cleaning Date: 2023-02-02</span>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 form-group">
+                                    <h6 class="text-muted">PROPERTY TYPE:</h6>
+                                    <div class="list-group">
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox"  disabled>
+                                                    House
+                                                </label>
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox" disabled >
+                                                    Townhouse
+                                                </label>
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox" disabled>
+                                                    Apartament
+                                                </label>
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox" checked disabled >
+                                                    Office
+                                                </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <button type="button" class="btn btn-primary mr-2 mb-2 has-ripple" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">See More ...</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="text-primary mb-3">TOWNHOUSE / 3 BEDROOMS / 5 BATHROOMS ...</h5>
+                            <span class="mb-1 text-muted d-flex align-items-end text-h-primary"> 4289 Calvin Street - Baltimore, near MD Tower Maryland</span>
+                            <span class="mb-1 text-muted d-flex align-items-end text-h-primary">Cleaning Date: 2023-02-02</span>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 form-group">
+                                    <h6 class="text-muted">PROPERTY TYPE:</h6>
+                                    <div class="list-group">
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox"  disabled>
+                                                    House
+                                                </label>
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox" checked disabled >
+                                                    Townhouse
+                                                </label>
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox" disabled>
+                                                    Apartament
+                                                </label>
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox" disabled >
+                                                    Office
+                                                </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <button type="button" class="btn btn-primary mr-2 mb-2 has-ripple" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">See More ...</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="text-primary mb-3">APARTAMENT / 3 BEDROOMS / 5 BATHROOMS ...</h5>
+                            <span class="mb-1 text-muted d-flex align-items-end text-h-primary"> 4289 Calvin Street - Baltimore, near MD Tower Maryland</span>
+                            <span class="mb-1 text-muted d-flex align-items-end text-h-primary">Cleaning Date: 2023-02-02</span>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 form-group">
+                                    <h6 class="text-muted">PROPERTY TYPE:</h6>
+                                    <div class="list-group">
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox"  disabled>
+                                                    House
+                                                </label>
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox" disabled >
+                                                    Townhouse
+                                                </label>
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox" checked  disabled>
+                                                    Apartament
+                                                </label>
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox" disabled >
+                                                    Office
+                                                </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <button type="button" class="btn btn-primary mr-2 mb-2 has-ripple" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">See More ...</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="text-primary mb-3">APARTAMENT / 3 BEDROOMS / 5 BATHROOMS ...</h5>
+                            <span class="mb-1 text-muted d-flex align-items-end text-h-primary"> 4289 Calvin Street - Baltimore, near MD Tower Maryland</span>
+                            <span class="mb-1 text-muted d-flex align-items-end text-h-primary">Cleaning Date: 2023-02-02</span>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 form-group">
+                                    <h6 class="text-muted">PROPERTY TYPE:</h6>
+                                    <div class="list-group">
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox"  disabled>
+                                                    House
+                                                </label>
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox" disabled >
+                                                    Townhouse
+                                                </label>
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox" checked  disabled>
+                                                    Apartament
+                                                </label>
+                                        <label class="list-group-item">
+                                                    <input class="form-check-input me-1" type="checkbox" disabled >
+                                                    Office
+                                                </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <button type="button" class="btn btn-primary mr-2 mb-2 has-ripple" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">See More ...</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Modal More Details -->
+                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title h5 text-primary" id="myLargeModalLabel">PROPERTY DETAILS</h6>
+
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="body-form">
+
+                                    <div class="row">
+                                        <!-- PROPERTY TYPE -->
+                                        <div class="col-sm-12 col-md-12 form-group">
+                                            <h6>PROPERTY TYPE:</h6>
+                                            <div class="list-group">
+                                                <label class="list-group-item">
+                                                                <input class="form-check-input me-1" type="checkbox" disabled>
+                                                                House
+                                                            </label>
+                                                <label class="list-group-item">
+                                                                <input class="form-check-input me-1" type="checkbox" disabled>
+                                                                Townhouse
+                                                            </label>
+                                                <label class="list-group-item">
+                                                                <input class="form-check-input me-1" type="checkbox" disabled checked>
+                                                                Apartament
+                                                            </label>
+                                                <label class="list-group-item">
+                                                                <input class="form-check-input me-1" type="checkbox" disabled>
+                                                                Office
+                                                            </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- CHOOSE CLEANING -->
+                                        <div class="col-sm-12 col-md-12 form-group">
+                                            <h6>CHOOSE CLEANING YOU WOULD LIKE?</h6>
+                                            <div class="list-group">
+                                                <label class="list-group-item">
+                                                                <input class="form-check-input me-1" type="checkbox" disabled checked>
+                                                                REGULAR CLEANING
+                                                            </label>
+                                                <label class="list-group-item">
+                                                                <input class="form-check-input me-1" type="checkbox" disabled>
+                                                                DEEP CLEANING
+                                                            </label>
+                                                <label class="list-group-item">
+                                                                <input class="form-check-input me-1" type="checkbox" disabled>
+                                                                MOVE IN/OUT CLEANING
+                                                            </label>
+                                                <label class="list-group-item">
+                                                                <input class="form-check-input me-1" type="checkbox" disabled>
+                                                                POST CONSTRUCTION CLEANING
+                                                            </label>
+                                                <label class="list-group-item">
+                                                                <input class="form-check-input me-1" type="checkbox" disabled>
+                                                                AFTER PARTY
+                                                            </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- CLEANING IS -->
+                                        <div class="col-sm-12 col-md-12 form-group">
+                                            <h6>CLEANING IS:</h6>
+                                            <div class="list-group">
+                                                <label class="list-group-item">
+                                                                <input class="form-check-input me-1" type="radio" disabled name="radio_cleaning">
+                                                                ONE TIME
+                                                            </label>
+                                                <label class="list-group-item">
+                                                                <input class="form-check-input me-1" checked type="radio" disabled name="radio_cleaning">
+                                                                WEEKLY
+                                                            </label>
+                                                <label class="list-group-item">
+                                                                <input class="form-check-input me-1" type="radio" disabled name="radio_cleaning">
+                                                                BEWEEKLY
+                                                            </label>
+                                                <label class="list-group-item">
+                                                                <input class="form-check-input me-1" type="radio" disabled name="radio_cleaning">
+                                                                MONTHLY
+                                                            </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- HOW MANYS -->
+                                        <div class="col-sm-12 col-md-12 form-group">
+                                            <div class="form-group">
+                                                <label class="floating-label" for="BEDROOMS">HOW MANY BEDROOMS?</label>
+                                                <input type="number" class="form-control" id="BEDROOMS" readonly placeholder="" value="7">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="floating-label" for="BATHROOMS">HOW MANY BATHROOMS?</label>
+                                                <input type="number" class="form-control" id="BATHROOMS" readonly placeholder="" value="2">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="floating-label" for="ROOM">HOW MANY DINING ROOM?</label>
+                                                <input type="number" class="form-control" id="ROOM" readonly placeholder="" value="3">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="floating-label" for="LIVING">HOW MANY LIVING ROOM?</label>
+                                                <input type="number" class="form-control" id="LIVING" readonly placeholder="" value="4">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="floating-label" for="LIVING">HOW MANY KITCHEN?</label>
+                                                <input type="number" class="form-control" id="KITCHEN" readonly placeholder="" value="1">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="floating-label" for="LIVING">HOW MANY GYM?</label>
+                                                <input type="number" class="form-control" id="KITCHEN" readonly placeholder="" value="2">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="floating-label" for="LIVING">HOW MANY LAUNDRY?</label>
+                                                <input type="number" class="form-control" id="KITCHEN" readonly placeholder="" value="1">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="floating-label" for="LIVING">HOW MANY PLAYROOM?</label>
+                                                <input type="number" class="form-control" id="KITCHEN" readonly placeholder="" value="1">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="floating-label" for="LIVING">HOW MANY OFFICE?</label>
+                                                <input type="number" class="form-control" id="KITCHEN" readonly placeholder="" value="2">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="floating-label" for="LIVING">HOW MANY CINEMAS?</label>
+                                                <input type="number" class="form-control" id="KITCHEN" readonly placeholder="" value="0">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <button type="button" class="btn btn-primary float-end" data-bs-dismiss="modal" aria-label="Close">To Apply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
 
             <!-- [ Main Content ] end -->
         </div>
     </div>
-
-    <!-- [ Main Content ] end -->
-    <!-- Warning Section start -->
-    <!-- Older IE warning message -->
-    <!--[if lt IE 11]>
-        <div class="ie-warning">
-            <h1>Warning!!</h1>
-            <p>You are using an outdated version of Internet Explorer, please upgrade
-               <br/>to any of the following web browsers to access this website.
-            </p>
-            <div class="iew-container">
-                <ul class="iew-download">
-                    <li>
-                        <a href="http://www.google.com/chrome/">
-                            <img src="assets/images/browser/chrome.png" alt="Chrome">
-                            <div>Chrome</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.mozilla.org/en-US/firefox/new/">
-                            <img src="assets/images/browser/firefox.png" alt="Firefox">
-                            <div>Firefox</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://www.opera.com">
-                            <img src="assets/images/browser/opera.png" alt="Opera">
-                            <div>Opera</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.apple.com/safari/">
-                            <img src="assets/images/browser/safari.png" alt="Safari">
-                            <div>Safari</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                            <img src="assets/images/browser/ie.png" alt="">
-                            <div>IE (11 & above)</div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <p>Sorry for the inconvenience!</p>
-        </div>
-    <![endif]-->
-    <!-- Warning Section Ends -->
 
     <!-- Required Js -->
     <script src="assets/js/vendor-all.min.js"></script>
@@ -292,6 +747,12 @@
     <script src="assets/js/plugins/apexcharts.min.js"></script>
     <!-- custom-chart js -->
     <script src="assets/js/pages/dashboard-main.js"></script>
+
+    <!-- ekko-lightbox Js -->
+    <script src="assets/js/plugins/ekko-lightbox.min.js"></script>
+    <script src="assets/js/plugins/lightbox.min.js"></script>
+    <script src="assets/js/pages/ac-lightbox.js"></script>
+
     <script>
         $(document).ready(function() {
             checkCookie();
